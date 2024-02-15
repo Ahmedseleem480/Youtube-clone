@@ -1,0 +1,289 @@
+/* Start global rules */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: roboto, Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* End global rules */
+/* styling scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.786);
+    border-radius: 10px;
+}
+
+/* Start header */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    min-height: 56px;
+    position: relative;
+}
+
+header::after {
+    content: "";
+    width: calc(100% - 55px);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #8080801f;
+    height: 1px;
+}
+
+header .right-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .right-content img {
+    width: 130px;
+}
+
+header .mid-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+header .mid-content form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+header .mid-content form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #80808033;
+}
+
+header .mid-content form i {
+    background-color: #f8f8f8;
+    border: 1px solid #d3d3d3;
+    width: 59px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+header .mid-content>i {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+header .left-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+header .left-content i:nth-of-type(3) {
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 992px) {
+    header {
+        padding: 5px;
+    }
+}
+
+/* Aside content */
+.container {
+    height: calc(100vh - 56px);
+    background-color: #f9f9f9;
+    display: flex;
+}
+
+aside {
+    height: 100%;
+    width: 280px;
+    overflow-y: auto;
+    background-color: white;
+    padding: 0 10px;
+}
+
+aside nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+aside nav>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+    padding: 10px 0 20px 0;
+    border-bottom: 1px solid #0000001f;
+}
+
+aside nav>div>a {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    color: black;
+}
+
+aside nav>div .active {
+    background-color: rgba(128, 128, 128, 0.223);
+}
+
+aside nav>div>a>span {
+    color: black;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+aside nav>div>a:not(.active):hover {
+    background-color: rgba(128, 128, 128, 0.081);
+}
+
+aside nav>div:nth-of-type(3)>h2 {
+    font-size: 0.9rem;
+    font-weight: 100;
+    margin: 0 9px 0 0;
+    color: #777373;
+}
+
+/* video content */
+main {
+    padding: 15px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+
+main .video-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.video-box {
+    cursor: pointer;
+}
+
+main .video-content .video-box img {
+    max-width: 100%;
+}
+
+main .video-content .video-box .content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+main .video-content .video-box .content .channel-image {
+    background-image: url(../Images/hq7203.jpg);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center center;
+}
+
+main .video-content .video-box .content .text h2 {
+    display: block;
+    width: 100%;
+    padding: 5px 0 5px 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+main .video-content .video-box .content .text h4 {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #606060;
+}
+
+main .video-content .video-box .content .text .stats {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.7rem;
+    font-weight: 300;
+    margin-top: 5px;
+    color: #606060;
+}
+
+main .video-content .video-box .content .text h4:hover {
+    color: #141414;
+}
+
+@media screen and (max-width: 1290px) {
+    aside nav>div>a {
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px 5px;
+    }
+
+    aside {
+        width: fit-content;
+        padding: 0;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    aside nav>div {
+        padding: 0;
+        gap: 10px;
+    }
+
+    .second-box,
+    .third-box,
+    .fourth-box {
+        display: none;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    aside {
+        display: none;
+    }
+}
